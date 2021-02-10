@@ -1,0 +1,35 @@
+#include <stdio.h> 
+#include <assert.h>
+char* my_strstr(const char* p1, const char* p2)
+{
+	assert(p1 && p2);
+	if (*p2 == '\0')//arr2是空字符串的情况
+		return (char*)p1;
+	char* ret = (char*)p1;
+	char* s1 = (char*)p1;
+	char* s2 = (char*)p2;
+	while (*ret)//查找过程
+	{
+		s1 = ret;
+		s2 = (char*)p2;
+		while ((*s1++ == *s2++) && (*s1 != '\0') && (*s2 != '\0'))
+		{
+			;
+		}
+		if (*s2 == '\0')//找到的情况
+		{
+			return ret;
+		}
+		ret++;
+	}
+	if (ret == '\0')//找不到的情况
+		return NULL;
+}
+int main()
+{
+	char arr1[] = "abbbcd";
+	char arr2[] = "bbc";
+	char* ret=my_strstr(arr1, arr2);
+	printf("%s", ret);
+	return 0;
+}

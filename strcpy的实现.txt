@@ -1,0 +1,21 @@
+#include <stdio.h> 
+#include <assert.h>
+char* my_strcpy(char* dest, const char* src)
+{
+	assert(dest);
+	assert(src);
+	char* ret = dest;
+	while (*dest++ = *src++)//先把src解引用之后赋给dest，然后再++ 
+	{
+		;
+	}
+	return ret;//返回目标数组的起始地址
+}
+int main()
+{
+	char arr1[] = "ABCDEF";
+	char arr2[] = "QWER";
+	my_strcpy(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+} 
