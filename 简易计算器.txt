@@ -1,0 +1,33 @@
+#include <stdio.h> 
+int main()
+{
+    double x = 0;
+    double y = 0;
+    char operation = 0;
+    while (scanf("%lf%c%lf",&x,&operation,&y)!=EOF)
+    {
+        getchar();
+        if (operation == '+')
+        {
+            printf("%.4lf+%.4lf=%.4lf\n", x, y, x + y);
+        }
+        else if (operation == '-')
+        {
+            printf("%.4lf-%.4lf=%.4f\n", x, y, x - y);
+        }
+        else if (operation == '*')
+        {
+            printf("%.4lf*%.4lf=%.4lf\n", x, y, x * y);
+        }
+        else if (operation == '/')
+        {
+            if (y == 0)
+                printf("Wrong!Division by zero!\n");
+            else
+                printf("%.4lf/%.4lf=%.4lf\n", x, y, x / y);
+        }
+        else
+            printf("Invalid operation!\n");
+    }
+    return 0;
+}
